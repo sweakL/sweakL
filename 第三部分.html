@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>疫情下人们的消费情况的变化</title>
+    <link rel="stylesheet" href="css/index.css">  
+    <script src="js/echarts.min.js"></script>
+    <script src="js/chalk.js"></script>
+    <script src="js/flexible.js"></script>
+</head>
+<body>
+  <header>
+    <div class="nav">
+        <ul class="ullist">
+        <li class="libt">
+          <a href="index.html">首页</a>
+        </li>
+        <li class="libt">
+        <a href="第二部分.html">人们的收入的变化</a>
+        </li>
+        <li class="libt">
+        <a href="第三部分.html">人们的消费的变化</a>
+        </li>
+        <li class="libt">
+        <a href="第四部分.html">人们的生活水平总变化</a>
+        </li>
+        <ul>
+        </div>
+  <div class="a">
+    <input type="text" class="b">
+    <a href="#" class="c">
+        <img src="images/钞票.png" style="width: 30px;">
+    </a>
+  </div>
+   </header>
+    <div class="main-thr">
+        <p class="main0">疫情三年人们的消费的变化</p>
+       <div class="main1"> 
+        <script type="text/javascript">
+          // 基于准备好的dom，初始化echarts实例
+          var myChart1 = echarts.init(document.querySelector('.main1'),'chalk');
+          // 指定图表的配置项和数据
+          var option1 = {
+         title: {
+           text: '疫情三年人们的消费情况变化',
+              left: "center",
+              bottom: "10",
+              textStyle: {
+                 fontSize: 20
+              },
+         },
+         tooltip: {
+           trigger: 'axis',
+           axisPointer: {
+             type: 'shadow'
+           }
+         },
+         legend: {
+          top:30
+         },
+         grid: {
+           left: '3%',
+           right: '10%',
+           bottom: '10%',
+           containLabel: true
+         },
+         toolbox: {
+           show: true,
+           orient:'vertical',
+           top:'center',
+           right:'20',
+           feature: {
+             dataZoom: {
+               yAxisIndex: "none"
+             },
+             dataView: {
+               readOnly: false
+             },
+             magicType: {
+               type: ["line", "bar"]
+             },
+             iconStyle:{
+              color:'pink',
+             },
+             restore: {},
+             saveAsImage: {}
+           }
+         },
+         yAxis: {
+           type: 'value',
+           name:"单位（元/月）",
+           boundaryGap: [0, 0.01]
+         },
+         xAxis: {
+           type: 'category',
+           data: ['出行', '食物', '医疗', '娱乐', '衣服']
+         },
+         series: [
+           {
+             name: '2020',
+             type: 'bar',
+             data: [200, 500, 200, 200, 300],
+             emphasis: {
+             focus: 'series',
+             blurScope: 'coordinateSystem'
+           
+              }
+        },
+        {
+             name: '2021',
+             type: 'bar',
+             data: [150, 480, 300, 200, 250],
+             emphasis: {
+             focus: 'series',
+             blurScope: 'coordinateSystem'
+           
+             }
+        },
+        {
+             name: '2022',
+             type: 'bar',
+             data: [100, 490, 250, 210, 200],
+             emphasis: {
+             focus: 'series',
+             blurScope: 'coordinateSystem'
+           
+           }
+        }
+     ]
+ };
+            //label:{
+            //     show:true,
+           //   fontsize:30
+           // },
+           //markLine:{
+              // data:[
+                  // {
+                     //  type:'average'
+                  // }
+              // ]
+         //  }
+           
+       
+          // 使用刚指定的配置项和数据显示图表。
+          myChart1.setOption(option1);
+          window.onresize = function() {
+            myChart1.resize();
+        };
+        </script>
+        </div>
+        <div class="main2"> 
+          <div style="position: relative; width:1500;height:700;background-color: rgb(146, 225, 175);background-color: rgb(45, 228, 100);">
+            <p style="position: absolute; width: 500px;left: 200px;top: 80px;line-height: 50px; font-size:20px; color: rgb(0, 0, 0);">三年来，人们的消费行为更加理性，该买的买，不该买的坚决不买。不再像疫情之前，有强烈的囤货欲望和冲动。疫情重新塑造了人们的消费观，人们以消费生活必需品为主。</p>
+           <p style="position: absolute;width: 500px;left: 200px;top: 260px;font-size: 20px;line-height: 50px; color: rgb(0, 0, 0);">人们的消费行为更加务实，越来越多消费者开始拥抱消费券、以旧换新、旧物回收拿补贴等可以省钱的商家活动。大家的消费行为越来越严谨，新世纪的年轻人也开始货比三家。同时也学会了减少不必要的开支，对于自己的消费管控也越来越严格。</p>
+            <div id="main" style="position: absolute;width:600px;height:550px;left:750px;"></div>
+           </div>
+      
+        </div>
+      </div>
+      <style>
+        #main,
+        html,
+        body {
+          width: 100%;
+        }
+      </style>
+      <div id="main"></div>
+      <script type="text/javascript">
+        var myChart = echarts.init(document.getElementById('main'));
+        window.onresize = function() {
+          myChart.resize();
+        };
+      </script>
+</body>
+</html>

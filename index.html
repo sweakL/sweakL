@@ -1,0 +1,456 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>疫情下人们的生活水平变化</title>
+    <link rel="stylesheet" href="css/index.css">  
+    <script src="js/echarts.min.js"></script>
+    <script src="js/chalk.js"></script>
+    <script src="js/flexible.js"></script>
+</head>
+<body>
+ <header>
+  <div class="nav">
+<ul class="ullist">
+<li class="libt">
+<a href="index.html">首页</a>
+</li>
+<li class="libt">
+<a href="第二部分.html">人们的收入的变化</a>
+</li>
+<li class="libt">
+<a href="第三部分.html">人们的消费的变化</a>
+</li>
+<li class="libt">
+<a href="第四部分.html">人们的生活水平总变化</a>
+</li>
+<ul>
+</div>
+<div class="a">
+  <input type="text" class="b">
+  <a href="#" class="c">
+      <img src="images/钞票.png" style="width: 30px;">
+  </a>
+</div>
+ </header>
+ <footer>
+<div class="subnav" style="position: relative;">
+  <p style="position: absolute; width: 300px;left: 30px;top: 50px; line-height: 50px; font-size:20px; color: rgb(21, 72, 238);">
+    “疫情”相伴三年。对我们的出行方式、生活习惯和工作方式都有很大的改变。
+    无疫情前，多少人的生活习惯是逛街购物、朋友聚会，看电影、演出，假日选择游山玩水……。现在出门不戴口罩倒不习惯了，戴口罩不仅能有效预防病毒感染，还能夏天防晒、冬天防冻。
+    疫情影响最大的是服务行业。餐饮业、旅游业、零售业、交通业，钱更难赚了，人们更加明白了"铁饭碗"的重要性。慢慢发现考研、考公、考编的人数明显不断增加。
+  </p>
+</div>
+ </footer>
+ <div class="main-frist">
+  <p class="main-zero">疫情三年人们的收入变化</p>
+ <div class="main-one"> 
+  <script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart1 = echarts.init(document.querySelector('.main-one'),'chalk');
+    // 指定图表的配置项和数据
+    var option1 = {
+   title: {
+     text: '疫情三年人们的收入变化',
+        left: "center",
+        bottom: "10",
+        textStyle: {
+           fontSize: 20
+        },
+   },
+   tooltip: {
+     trigger: 'axis',
+     axisPointer: {
+       type: 'shadow'
+     }
+   },
+   legend: {
+    top:30
+   },
+   grid: {
+     left: '3%',
+     right: '10%',
+     bottom: '10%',
+     containLabel: true
+   },
+   toolbox: {
+     show: true,
+     orient:'vertical',
+     top:'center',
+     right:'20',
+     feature: {
+       dataZoom: {
+         yAxisIndex: "none"
+       },
+       dataView: {
+         readOnly: false
+       },
+       magicType: {
+         type: ["line", "bar"]
+       },
+       iconStyle:{
+        color:'pink',
+       },
+       restore: {},
+       saveAsImage: {}
+     }
+   },
+   yAxis: {
+     type: 'value',
+     name:"单位（元/月）",
+     boundaryGap: [0, 0.01]
+   },
+   xAxis: {
+     type: 'category',
+     data: ['服务行业', '餐饮行业', '医疗行业', '娱乐行业', '旅游行业']
+   },
+   series: [
+     {
+       name: '2020',
+       type: 'bar',
+       data: [300, 400, 200, 300, 200],
+       emphasis: {
+       focus: 'series',
+       blurScope: 'coordinateSystem'
+     
+        }
+  },
+  {
+       name: '2021',
+       type: 'bar',
+       data: [250, 380, 300, 200, 180],
+       emphasis: {
+       focus: 'series',
+       blurScope: 'coordinateSystem'
+     
+       }
+  },
+  {
+       name: '2022',
+       type: 'bar',
+       data: [200, 390, 350, 210, 190],
+       emphasis: {
+       focus: 'series',
+       blurScope: 'coordinateSystem'
+     
+     }
+  }
+]
+};
+      //label:{
+      //     show:true,
+     //   fontsize:30
+     // },
+     //markLine:{
+        // data:[
+            // {
+               //  type:'average'
+            // }
+        // ]
+   //  }
+     
+ 
+    // 使用刚指定的配置项和数据显示图表。
+    myChart1.setOption(option1);
+    window.onresize = function() {
+      myChart1.resize();
+  };
+  </script>
+  </div>
+  <div class="main-two"> 
+    <div style="position: relative; width:1500;height:700;background-color: rgb(146, 225, 175);background-color: aqua;">
+      <p style="position: absolute; width: 500px;left: 200px;top: 80px;line-height: 50px; font-size:20px; color: rgb(0, 0, 0);">2020年是中国新冠疫情的元年，从这一年开始，新冠疫情就正式进入了我们的生活中，并对我们的生活造成了极大的影响</p>
+     <p style="position: absolute;width: 500px;left: 200px;top: 240px;font-size: 20px;line-height: 50px; color: rgb(0, 0, 0);">在新冠疫情的影响下，我们的出行，食物，医药，服装，娱乐等方面都发生了很大的变化，疫情也改变了我们的生活方式。从2020年开始，我们的生活就慢慢被新冠疫情改变了,相较于疫情前，我们点外卖的次数变多了，我们出行的次数变少了，我们花在医药上的钱变多了，我们购买服装的次数变少了，我们的娱乐从线下转到线上了。</p>
+      <div id="main" style="position: absolute;width:600px;height:550px;left:750px;"></div>
+     </div>
+
+  </div>
+</div>
+<style>
+  #main,
+  html,
+  body {
+    width: 100%;
+  }
+</style>
+<div id="main"></div>
+<script type="text/javascript">
+  var myChart = echarts.init(document.getElementById('main'));
+  window.onresize = function() {
+    myChart.resize();
+  };
+</script>
+<div class="main-thr">
+  <p class="main0">疫情三年人们的消费的变化</p>
+ <div class="main1"> 
+  <script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart1 = echarts.init(document.querySelector('.main1'),'chalk');
+    // 指定图表的配置项和数据
+    var option1 = {
+   title: {
+     text: '疫情三年人们的消费情况变化',
+        left: "center",
+        bottom: "10",
+        textStyle: {
+           fontSize: 20
+        },
+   },
+   tooltip: {
+     trigger: 'axis',
+     axisPointer: {
+       type: 'shadow'
+     }
+   },
+   legend: {
+    top:30
+   },
+   grid: {
+     left: '3%',
+     right: '10%',
+     bottom: '10%',
+     containLabel: true
+   },
+   toolbox: {
+     show: true,
+     orient:'vertical',
+     top:'center',
+     right:'20',
+     feature: {
+       dataZoom: {
+         yAxisIndex: "none"
+       },
+       dataView: {
+         readOnly: false
+       },
+       magicType: {
+         type: ["line", "bar"]
+       },
+       iconStyle:{
+        color:'pink',
+       },
+       restore: {},
+       saveAsImage: {}
+     }
+   },
+   yAxis: {
+     type: 'value',
+     name:"单位（元/月）",
+     boundaryGap: [0, 0.01]
+   },
+   xAxis: {
+     type: 'category',
+     data: ['出行', '食物', '医疗', '娱乐', '衣服']
+   },
+   series: [
+     {
+       name: '2020',
+       type: 'bar',
+       data: [200, 500, 200, 200, 300],
+       emphasis: {
+       focus: 'series',
+       blurScope: 'coordinateSystem'
+     
+        }
+  },
+  {
+       name: '2021',
+       type: 'bar',
+       data: [150, 480, 300, 200, 250],
+       emphasis: {
+       focus: 'series',
+       blurScope: 'coordinateSystem'
+     
+       }
+  },
+  {
+       name: '2022',
+       type: 'bar',
+       data: [100, 490, 250, 210, 200],
+       emphasis: {
+       focus: 'series',
+       blurScope: 'coordinateSystem'
+     
+     }
+  }
+]
+};
+      //label:{
+      //     show:true,
+     //   fontsize:30
+     // },
+     //markLine:{
+        // data:[
+            // {
+               //  type:'average'
+            // }
+        // ]
+   //  }
+     
+ 
+    // 使用刚指定的配置项和数据显示图表。
+    myChart1.setOption(option1);
+    window.onresize = function() {
+      myChart1.resize();
+  };
+  </script>
+  </div>
+  <div class="main2"> 
+    <div style="position: relative; width:1500;height:700;background-color: rgb(146, 225, 175);background-color: rgb(45, 228, 100);">
+      <p style="position: absolute; width: 500px;left: 200px;top: 80px;line-height: 50px; font-size:20px; color: rgb(0, 0, 0);">三年来，人们的消费行为更加理性，该买的买，不该买的坚决不买。不再像疫情之前，有强烈的囤货欲望和冲动。疫情重新塑造了人们的消费观，人们以消费生活必需品为主。</p>
+     <p style="position: absolute;width: 500px;left: 200px;top: 260px;font-size: 20px;line-height: 50px; color: rgb(0, 0, 0);">人们的消费行为更加务实，越来越多消费者开始拥抱消费券、以旧换新、旧物回收拿补贴等可以省钱的商家活动。大家的消费行为越来越严谨，新世纪的年轻人也开始货比三家。同时也学会了减少不必要的开支，对于自己的消费管控也越来越严格。</p>
+      <div id="main" style="position: absolute;width:600px;height:550px;left:750px;"></div>
+     </div>
+
+  </div>
+</div>
+<style>
+  #main,
+  html,
+  body {
+    width: 100%;
+  }
+</style>
+<div id="main"></div>
+<script type="text/javascript">
+  var myChart = echarts.init(document.getElementById('main'));
+  window.onresize = function() {
+    myChart.resize();
+  };
+</script>
+<div class="main-4">
+  <p class="main-0">三年来人们的收支</p>
+ <div class="main-1"> 
+  <script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart1 = echarts.init(document.querySelector('.main-1'),'chalk');
+    // 指定图表的配置项和数据
+    var option1 = {
+   title: {
+     text: '疫情三年人们收支变化',
+        left: "center",
+        bottom: "10",
+        textStyle: {
+           fontSize: 20
+        },
+   },
+   tooltip: {
+     trigger: 'axis',
+     axisPointer: {
+       type: 'shadow'
+     }
+   },
+   legend: {
+    top:30
+   },
+   grid: {
+     left: '3%',
+     right: '10%',
+     bottom: '10%',
+     containLabel: true
+   },
+   toolbox: {
+     show: true,
+     orient:'vertical',
+     top:'center',
+     right:'20',
+     feature: {
+       dataZoom: {
+         yAxisIndex: "none"
+       },
+       dataView: {
+         readOnly: false
+       },
+       magicType: {
+         type: ["line", "bar"]
+       },
+       iconStyle:{
+        color:'pink',
+       },
+       restore: {},
+       saveAsImage: {}
+     }
+   },
+   yAxis: {
+     type: 'value',
+     name:"单位（元/月）",
+     boundaryGap: [0, 0.01]
+   },
+   xAxis: {
+     type: 'category',
+     data: ['2020', '2021', '2022']
+   },
+   series: [
+     {
+       name: '收入',
+       type: 'bar',
+       data: [4500, 4000, 4300],
+       emphasis: {
+       focus: 'series',
+       blurScope: 'coordinateSystem'
+     
+        }
+  },
+  {
+       name: '支出',
+       type: 'bar',
+       data: [3600, 3800, 3850],
+       emphasis: {
+       focus: 'series',
+       blurScope: 'coordinateSystem'
+     
+       }
+  },
+]
+};
+      //label:{
+      //     show:true,
+     //   fontsize:30
+     // },
+     //markLine:{
+        // data:[
+            // {
+               //  type:'average'
+            // }
+        // ]
+   //  }
+     
+ 
+    // 使用刚指定的配置项和数据显示图表。
+    myChart1.setOption(option1);
+    window.onresize = function() {
+      myChart1.resize();
+  };
+  </script>
+  </div>
+  <div class="main-2"> 
+    <div style="position: relative; width:1500;height:700;background-color: rgb(146, 225, 175);background-color: rgb(45, 228, 100);">
+      <p style="position: absolute; width: 500px;left: 200px;top: 80px;line-height: 50px; font-size:20px; color: rgb(0, 0, 0);">三年来，人们的收入大体成下降趋势，因为很多的从商和从事餐饮服务业的人民收入下降大。</p>
+     <p style="position: absolute;width: 500px;left: 200px;top: 260px;font-size: 20px;line-height: 50px; color: rgb(0, 0, 0);">但是另一方面，因为疫情原因，人们的消费支出不得不逐步提高，这是因为人们对于医疗用品的需求逐渐增大，比如口罩，消毒液，连花清瘟胶囊等对于疫情局势有帮助的药品，并且这些物品的价格还在逐步提升。</p>
+      <div id="main" style="position: absolute;width:600px;height:550px;left:750px;"></div>
+     </div>
+
+  </div>
+</div>
+<style>
+  #main,
+  html,
+  body {
+    width: 100%;
+  }
+</style>
+<div id="main"></div>
+<script type="text/javascript">
+  var myChart = echarts.init(document.getElementById('main'));
+  window.onresize = function() {
+    myChart.resize();
+  };
+</script>
+ <div class="down" >
+<img src="images/底部背景.png" alt="">
+ </div>
+</body>
+</html>

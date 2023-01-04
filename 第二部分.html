@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>疫情下人们的收入的变化</title>
+    <link rel="stylesheet" href="css/index.css">  
+    <script src="js/echarts.min.js"></script>
+    <script src="js/chalk.js"></script>
+    <script src="js/flexible.js"></script>
+</head>
+<body>
+  <header>
+    <div class="nav">
+        <ul class="ullist">
+        <li class="libt">
+          <a href="index.html">首页</a>
+        </li>
+        <li class="libt">
+        <a href="第二部分.html">人们的收入的变化</a>
+        </li>
+        <li class="libt">
+        <a href="第三部分.html">人们的消费的变化</a>
+        </li>
+        <li class="libt">
+        <a href="第四部分.html">人们的生活水平总变化</a>
+        </li>
+        <ul>
+        </div>
+  <div class="a">
+    <input type="text" class="b">
+    <a href="#" class="c">
+        <img src="images/钞票.png" style="width: 30px;">
+    </a>
+  </div>
+   </header>
+    <div class="main-frist">
+        <p class="main-zero">疫情三年人们的收入变化</p>
+       <div class="main-one"> 
+        <script type="text/javascript">
+          // 基于准备好的dom，初始化echarts实例
+          var myChart1 = echarts.init(document.querySelector('.main-one'),'chalk');
+          // 指定图表的配置项和数据
+          var option1 = {
+         title: {
+           text: '疫情三年人们的收入变化',
+              left: "center",
+              bottom: "10",
+              textStyle: {
+                 fontSize: 20
+              },
+         },
+         tooltip: {
+           trigger: 'axis',
+           axisPointer: {
+             type: 'shadow'
+           }
+         },
+         legend: {
+          top:30
+         },
+         grid: {
+           left: '3%',
+           right: '10%',
+           bottom: '10%',
+           containLabel: true
+         },
+         toolbox: {
+           show: true,
+           orient:'vertical',
+           top:'center',
+           right:'20',
+           feature: {
+             dataZoom: {
+               yAxisIndex: "none"
+             },
+             dataView: {
+               readOnly: false
+             },
+             magicType: {
+               type: ["line", "bar"]
+             },
+             iconStyle:{
+              color:'pink',
+             },
+             restore: {},
+             saveAsImage: {}
+           }
+         },
+         yAxis: {
+           type: 'value',
+           name:"单位（元/月）",
+           boundaryGap: [0, 0.01]
+         },
+         xAxis: {
+           type: 'category',
+           data: ['服务行业', '餐饮行业', '医疗行业', '娱乐行业', '旅游行业']
+         },
+         series: [
+           {
+             name: '2020',
+             type: 'bar',
+             data: [300, 400, 200, 300, 200],
+             emphasis: {
+             focus: 'series',
+             blurScope: 'coordinateSystem'
+           
+              }
+        },
+        {
+             name: '2021',
+             type: 'bar',
+             data: [250, 380, 300, 200, 180],
+             emphasis: {
+             focus: 'series',
+             blurScope: 'coordinateSystem'
+           
+             }
+        },
+        {
+             name: '2022',
+             type: 'bar',
+             data: [200, 390, 350, 210, 190],
+             emphasis: {
+             focus: 'series',
+             blurScope: 'coordinateSystem'
+           
+           }
+        }
+     ]
+ };
+            //label:{
+            //     show:true,
+           //   fontsize:30
+           // },
+           //markLine:{
+              // data:[
+                  // {
+                     //  type:'average'
+                  // }
+              // ]
+         //  }
+           
+       
+          // 使用刚指定的配置项和数据显示图表。
+          myChart1.setOption(option1);
+          window.onresize = function() {
+            myChart1.resize();
+        };
+        </script>
+        </div>
+        <div class="main-two"> 
+          <div style="position: relative; width:1500;height:700;background-color: rgb(146, 225, 175);background-color: aqua;">
+            <p style="position: absolute; width: 500px;left: 200px;top: 80px;line-height: 50px; font-size:20px; color: rgb(0, 0, 0);">2020年是中国新冠疫情的元年，从这一年开始，新冠疫情就正式进入了我们的生活中，并对我们的生活造成了极大的影响</p>
+           <p style="position: absolute;width: 500px;left: 200px;top: 240px;font-size: 20px;line-height: 50px; color: rgb(0, 0, 0);">在新冠疫情的影响下，我们的出行，食物，医药，服装，娱乐等方面都发生了很大的变化，疫情也改变了我们的生活方式。从2020年开始，我们的生活就慢慢被新冠疫情改变了,相较于疫情前，我们点外卖的次数变多了，我们出行的次数变少了，我们花在医药上的钱变多了，我们购买服装的次数变少了，我们的娱乐从线下转到线上了。</p>
+            <div id="main" style="position: absolute;width:600px;height:550px;left:750px;"></div>
+           </div>
+      
+        </div>
+      </div>
+      <style>
+        #main,
+        html,
+        body {
+          width: 100%;
+        }
+      </style>
+      <div id="main"></div>
+      <script type="text/javascript">
+        var myChart = echarts.init(document.getElementById('main'));
+        window.onresize = function() {
+          myChart.resize();
+        };
+      </script>
+</body>
+</html>
